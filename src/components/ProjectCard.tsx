@@ -1,31 +1,25 @@
 import { ProjectItem } from "@/data/content";
 import { ExternalLink, Images } from "lucide-react";
-
 interface ProjectCardProps {
   project: ProjectItem;
   onOpenGallery: (project: ProjectItem) => void;
 }
-
-const ProjectCard = ({ project, onOpenGallery }: ProjectCardProps) => {
-  const { title, description, highlight, coverImage, externalUrl, buttonLabel } = project;
-
-  return (
-    <article className="card-dark overflow-hidden flex flex-col h-full group">
+const ProjectCard = ({
+  project,
+  onOpenGallery
+}: ProjectCardProps) => {
+  const {
+    title,
+    description,
+    highlight,
+    coverImage,
+    externalUrl,
+    buttonLabel
+  } = project;
+  return <article className="card-dark overflow-hidden flex flex-col h-full group">
       {/* Cover Image */}
-      <div 
-        className="relative aspect-video overflow-hidden cursor-pointer"
-        onClick={() => onOpenGallery(project)}
-        role="button"
-        tabIndex={0}
-        onKeyDown={(e) => e.key === "Enter" && onOpenGallery(project)}
-        aria-label={`Ver galeria de fotos de ${title}`}
-      >
-        <img
-          src={coverImage}
-          alt={title}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-          loading="lazy"
-        />
+      <div className="relative aspect-video overflow-hidden cursor-pointer" onClick={() => onOpenGallery(project)} role="button" tabIndex={0} onKeyDown={e => e.key === "Enter" && onOpenGallery(project)} aria-label={`Ver galeria de fotos de ${title}`}>
+        <img src={coverImage} alt={title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
         <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
           <span className="text-sm text-foreground flex items-center gap-2">
             <Images className="h-4 w-4" />
@@ -49,28 +43,8 @@ const ProjectCard = ({ project, onOpenGallery }: ProjectCardProps) => {
         </p>
         
         {/* Actions */}
-        <div className="flex gap-3 mt-auto">
-          <a
-            href={externalUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-neon flex-1 text-sm"
-          >
-            {buttonLabel}
-            <ExternalLink className="ml-2 h-4 w-4" />
-          </a>
-          
-          <button
-            onClick={() => onOpenGallery(project)}
-            className="btn-outline-neon text-sm px-4"
-            aria-label={`Ver galeria de fotos de ${title}`}
-          >
-            <Images className="h-4 w-4" />
-          </button>
-        </div>
+        
       </div>
-    </article>
-  );
+    </article>;
 };
-
 export default ProjectCard;
