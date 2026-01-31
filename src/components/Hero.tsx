@@ -6,6 +6,7 @@ const Hero = () => {
     firstName,
     lastName,
     subtitle,
+    specialties,
     ctaLabel,
     ctaAnchor,
     avatarImage: contentAvatar
@@ -27,9 +28,20 @@ const Hero = () => {
               <span className="text-foreground">{lastName}</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-xl leading-relaxed">
+            <p className="text-lg md:text-xl text-muted-foreground mb-4 max-w-xl leading-relaxed">
               {subtitle}
             </p>
+            
+            <div className="flex flex-wrap gap-2 mb-8">
+              {specialties.map((specialty, index) => (
+                <span
+                  key={index}
+                  className="px-3 py-1 text-sm font-medium border border-primary/40 text-primary rounded-full bg-primary/10"
+                >
+                  {specialty}
+                </span>
+              ))}
+            </div>
             
             <a href={ctaAnchor} className="btn-neon group">
               {ctaLabel}
