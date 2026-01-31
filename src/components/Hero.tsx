@@ -11,7 +11,7 @@ const Hero = () => {
     avatarImage: contentAvatar
   } = heroContent;
   const avatarImage = contentAvatar === "/placeholder.svg" ? avatarNatalino : contentAvatar;
-  return <section className="min-h-screen flex items-center relative overflow-hidden">
+  return <section className="min-h-screen flex items-center relative overflow-hidden pt-16">
       {/* Background gradient effect */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-graphite-light opacity-50" />
       
