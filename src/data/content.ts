@@ -64,7 +64,7 @@ export const heroContent: HeroContent = {
 
 export const aboutContent: AboutContent = {
   title: "| Sobre mim:",
-  text: "Sou desenvolvedor(a) web focado(a) em criar soluções digitais que realmente funcionam para pequenos negócios. Acredito que um bom site não precisa ser complicado — ele precisa ser claro, organizado e fácil de usar. Meu trabalho é traduzir a essência do seu negócio em uma presença online que seus clientes entendam e confiem.",
+  text: "Sou desenvolvedor web focado em criar soluções digitais que realmente funcionam para pequenos negócios. Acredito que um bom site não precisa ser complicado — ele precisa ser claro, organizado e fácil de usar. Meu trabalho é traduzir a essência do seu negócio em uma presença online que seus clientes entendam e confiem.",
   highlightNumber: "10+",
   highlightLabel: "anos de experiência",
   nicheLabel: "ajudando pequenas empresas a se comunicarem melhor com seus clientes através do site",
