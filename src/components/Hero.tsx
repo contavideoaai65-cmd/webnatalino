@@ -1,6 +1,6 @@
 import { heroContent } from "@/data/content";
 import { ArrowDown } from "lucide-react";
-import avatarPlaceholder from "@/assets/avatar-placeholder.jpg";
+import avatarNatalino from "@/assets/avatar-natalino.jpeg";
 const Hero = () => {
   const {
     firstName,
@@ -10,7 +10,7 @@ const Hero = () => {
     ctaAnchor,
     avatarImage: contentAvatar
   } = heroContent;
-  const avatarImage = contentAvatar === "/placeholder.svg" ? avatarPlaceholder : contentAvatar;
+  const avatarImage = contentAvatar === "/placeholder.svg" ? avatarNatalino : contentAvatar;
   return <section className="min-h-screen flex items-center relative overflow-hidden">
       {/* Background gradient effect */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-graphite-light opacity-50" />
