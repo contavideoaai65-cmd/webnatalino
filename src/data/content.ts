@@ -50,6 +50,9 @@ export interface ContactContent {
   title: string;
   emailLabel: string;
   emailValue: string;
+  whatsappLabel: string;
+  whatsappNumber: string;
+  whatsappDisplay: string;
 }
 
 // Default content (placeholders)
@@ -164,4 +167,7 @@ export const contactContent: ContactContent = {
   title: "| Entre em contato comigo:",
   emailLabel: "Email",
   emailValue: "ntlbbarbosa@gmail.com",
+  whatsappLabel: "WhatsApp",
+  whatsappNumber: "5521981853032",
+  whatsappDisplay: "(21) 98185-3032",
 };
