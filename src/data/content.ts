@@ -10,6 +10,7 @@ export interface HeroContent {
   firstName: string;
   lastName: string;
   subtitle: string;
+  specialties: string[];
   ctaLabel: string;
   ctaAnchor: string;
   avatarImage: string;
@@ -60,6 +61,7 @@ export const heroContent: HeroContent = {
   firstName: "Natalino",
   lastName: "Barbosa",
   subtitle: "Desenvolvo sites que ajudam pequenas empresas a se comunicarem melhor com seus clientes, transmitindo informações de forma clara e objetiva.",
+  specialties: ["Front-end", "Sites institucionais", "Landing pages"],
   ctaLabel: "Sobre mim",
   ctaAnchor: "#sobre-mim",
   avatarImage: "/placeholder.svg",
