@@ -163,5 +163,5 @@ export const servicesContent = {
 export const contactContent: ContactContent = {
   title: "| Entre em contato comigo:",
   emailLabel: "Email",
-  emailValue: "{{EMAIL_CONTATO}}",
+  emailValue: "ntlbbarbosa@gmail.com",
 };
