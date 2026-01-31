@@ -1,4 +1,5 @@
 import Hero from "@/components/Hero";
+import Header from "@/components/Header";
 import AboutMe from "@/components/AboutMe";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
@@ -19,12 +20,21 @@ const Index = () => {
         content={`${heroContent.subtitle.slice(0, 155)}...`}
       />
 
+      <Header />
       <main className="min-h-screen bg-background">
-        <Hero />
+        <div id="inicio">
+          <Hero />
+        </div>
         <AboutMe />
-        <Skills />
-        <Projects />
-        <Services />
+        <div id="habilidades">
+          <Skills />
+        </div>
+        <div id="projetos">
+          <Projects />
+        </div>
+        <div id="servicos">
+          <Services />
+        </div>
         <Contact />
         <Footer />
       </main>
