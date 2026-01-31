@@ -1,7 +1,8 @@
-import { aboutContent } from "@/data/content";
+import { aboutContent, heroContent } from "@/data/content";
 
 const AboutMe = () => {
   const { title, text, highlightNumber, highlightLabel, nicheLabel } = aboutContent;
+  const { specialties } = heroContent;
 
   return (
     <section id="sobre-mim" className="py-24 md:py-32">
@@ -13,9 +14,20 @@ const AboutMe = () => {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Text content */}
           <div className="animate-fade-up" style={{ animationDelay: "0.1s" }}>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed mb-4">
               {text}
             </p>
+            
+            <div className="flex flex-wrap gap-2">
+              {specialties.map((specialty, index) => (
+                <span
+                  key={index}
+                  className="px-3 py-1 text-sm font-medium border border-primary/40 text-primary rounded-full bg-primary/10"
+                >
+                  {specialty}
+                </span>
+              ))}
+            </div>
           </div>
           
           {/* Highlight box */}
