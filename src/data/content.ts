@@ -57,8 +57,8 @@ export interface ContactContent {
 
 // Default content (placeholders)
 export const heroContent: HeroContent = {
-  firstName: "{{PRIMEIRO_NOME}}",
-  lastName: "{{SOBRENOME}}",
+  firstName: "Natalino",
+  lastName: "Barbosa",
   subtitle: "Desenvolvo sites que ajudam pequenas empresas a se comunicarem melhor com seus clientes, transmitindo informações de forma clara e objetiva.",
   ctaLabel: "Sobre mim",
   ctaAnchor: "#sobre-mim",
