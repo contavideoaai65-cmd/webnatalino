@@ -21,10 +21,7 @@ const ProjectCard = ({
       <div className="relative aspect-video overflow-hidden cursor-pointer" onClick={() => onOpenGallery(project)} role="button" tabIndex={0} onKeyDown={e => e.key === "Enter" && onOpenGallery(project)} aria-label={`Ver galeria de fotos de ${title}`}>
         <img src={coverImage} alt={title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
         <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
-          <span className="text-sm text-foreground flex items-center gap-2">
-            <Images className="h-4 w-4" />
-            Ver fotos
-          </span>
+          
         </div>
       </div>
       
