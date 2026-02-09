@@ -25,11 +25,12 @@ const Pricing = () => {
                 "relative rounded-xl p-5 md:p-7 transition-all duration-300 animate-fade-up",
                 "bg-gradient-to-b from-white/[0.02] to-transparent",
                 "border shadow-lg shadow-black/20",
-                plan.recommended
+                plan.recommended && plan.ribbonAccent
+                  ? "md:-translate-y-2 animate-neon-pulse-coral border-orange-500"
+                  : plan.recommended
                   ? "md:-translate-y-2 animate-neon-pulse border-primary"
                   : "border-white/[0.03]",
-                plan.accent === "blue" && "border-l-4 border-l-blue-500/30",
-                plan.accent === "orange" && "border-l-4 border-l-orange-500/30"
+                !plan.recommended && plan.accent === "blue" && "border-l-4 border-l-blue-500/30"
               )}
               style={{ animationDelay: `${0.1 + index * 0.1}s` }}
             >
@@ -41,7 +42,8 @@ const Pricing = () => {
                     plan.ribbonAccent
                       ? "bg-orange-500 text-orange-950"
                       : "bg-primary text-primary-foreground",
-                    plan.recommended && "animate-neon-text-pulse"
+                    plan.recommended && plan.ribbonAccent && "animate-neon-text-pulse-coral",
+                    plan.recommended && !plan.ribbonAccent && "animate-neon-text-pulse"
                   )}
                 >
                   {plan.ribbon}
