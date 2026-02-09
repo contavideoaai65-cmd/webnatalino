@@ -62,18 +62,28 @@ const planConfig: Record<PlanType, { name: string; color: string }> = {
   completo: { name: "Site Completo", color: "text-orange-400" },
 };
 
-// Distribuição: 10 essencial, resto divide entre profissional e completo (completo vence)
-const getRandomPlan = (notificationIndex: number): PlanType => {
-  // Primeiras 10 notificações reservadas para essencial (distribuídas aleatoriamente)
-  const essencialSlots = [5, 23, 47, 72, 98, 125, 148, 167, 182, 195];
-  
-  if (essencialSlots.includes(notificationIndex)) {
-    return "essencial";
-  }
-  
-  // Entre profissional e completo, completo aparece ~65% das vezes
-  const random = Math.random();
-  return random < 0.35 ? "profissional" : "completo";
+// Textos variados por plano
+const messageTemplates: Record<PlanType, string[]> = {
+  completo: [
+    "acabou de contratar o Site Completo 🚀",
+    "Novo cliente no Site Completo",
+  ],
+  profissional: [
+    "escolheu o Site Profissional",
+    "Novo pedido: Site Profissional",
+  ],
+  essencial: [
+    "Novo site Essencial iniciado",
+    "Projeto Essencial solicitado agora",
+  ],
+};
+
+// Distribuição: Completo 65%, Profissional 25%, Essencial 10%
+const getRandomPlan = (): PlanType => {
+  const random = Math.random() * 100;
+  if (random < 10) return "essencial";
+  if (random < 35) return "profissional";
+  return "completo";
 };
 
 const getRandomItem = <T,>(array: T[]): T => {
@@ -93,21 +103,25 @@ const getRandomTimeAgo = (): string => {
 };
 
 const generateNotification = (index: number): Notification => {
-  const plan = getRandomPlan(index);
+  const plan = getRandomPlan();
+  const messageTemplate = getRandomItem(messageTemplates[plan]);
+  const useName = messageTemplate.includes("acabou") || messageTemplate.includes("escolheu");
+  
   return {
     id: index,
-    name: getRandomItem(clientNames),
+    name: useName ? getRandomItem(clientNames) : "",
     plan,
-    planName: planConfig[plan].name,
+    planName: messageTemplate,
     paymentMethod: getPaymentMethodByPlan(plan),
     city: getRandomItem(cities),
     timeAgo: getRandomTimeAgo(),
   };
 };
 
-const NOTIFICATION_DELAY = 180000; // 180 segundos = 3 minutos
-const TOTAL_NOTIFICATIONS = 200;
-const PAUSE_DURATION = 3600000; // 60 minutos
+const INITIAL_DELAY = 120000; // 120 segundos = 2 minutos
+const NOTIFICATION_DELAY = 240000; // 240 segundos = 4 minutos
+const TOTAL_NOTIFICATIONS = 35;
+const PAUSE_DURATION = 2700000; // 45 minutos
 const DISPLAY_DURATION = 8000; // 8 segundos visível
 
 const SocialProofNotification = () => {
@@ -149,10 +163,10 @@ const SocialProofNotification = () => {
   }, [notificationCount, isPaused, playNotificationSound]);
 
   useEffect(() => {
-    // Primeira notificação após 10 segundos
+    // Primeira notificação após 2 minutos
     const initialTimeout = setTimeout(() => {
       showNotification();
-    }, 10000);
+    }, INITIAL_DELAY);
 
     return () => clearTimeout(initialTimeout);
   }, []);
@@ -210,8 +224,9 @@ const SocialProofNotification = () => {
           {/* Content */}
           <div className="flex-1 min-w-0">
             <p className="text-sm text-foreground">
-              <span className="font-semibold">{currentNotification.name}</span>
-              {" "}acabou de adquirir o{" "}
+              {currentNotification.name && (
+                <span className="font-semibold">{currentNotification.name} </span>
+              )}
               <span className={cn("font-bold", planConfig[currentNotification.plan].color)}>
                 {currentNotification.planName}
               </span>
