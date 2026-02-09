@@ -139,6 +139,10 @@ export default {
             boxShadow: "0 0 2px #ff8a2b",
           },
         },
+        "shrink": {
+          "0%": { width: "100%" },
+          "100%": { width: "0%" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -150,6 +154,7 @@ export default {
         "neon-pulse-coral": "neon-pulse-coral 1.5s ease-in-out infinite",
         "neon-text-pulse": "neon-text-pulse 1.5s ease-in-out infinite",
         "neon-text-pulse-coral": "neon-text-pulse-coral 1.5s ease-in-out infinite",
+        "shrink": "shrink 8s linear forwards",
       },
     },
   },
