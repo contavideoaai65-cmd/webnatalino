@@ -193,7 +193,6 @@ export const pricingContent: PricingContent = {
       ctaText: "Você cuida de tudo sozinho!",
       ctaLabel: "Escolher",
       ctaLink: "https://wa.me/5521981853032?text=Olá! Tenho interesse no plano Site Essencial.",
-      accent: "blue",
     },
     {
       id: "profissional",
@@ -209,7 +208,7 @@ export const pricingContent: PricingContent = {
       ctaText: "Bom custo-benefício, sem limitações",
       ctaLabel: "Assinar",
       ctaLink: "https://wa.me/5521981853032?text=Olá! Tenho interesse no plano Site Profissional.",
-      ribbon: "Mais Escolhido",
+      accent: "blue",
     },
     {
       id: "completo",
@@ -228,7 +227,7 @@ export const pricingContent: PricingContent = {
       ctaText: "Tudo que você precisa!",
       ctaLabel: "Contratar",
       ctaLink: "https://wa.me/5521981853032?text=Olá! Tenho interesse no plano Site Completo.",
-      ribbon: "Recomendado",
+      ribbon: "Mais Escolhido",
       ribbonAccent: true,
       recommended: true,
       accent: "orange",
