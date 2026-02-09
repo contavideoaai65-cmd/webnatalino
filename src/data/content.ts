@@ -75,11 +75,10 @@ export const aboutContent: AboutContent = {
 };
 
 export const skillsContent: SkillItem[] = [
-  { name: "HTML/CSS", level: 95 },
-  { name: "JavaScript", level: 90 },
-  { name: "React", level: 85 },
-  { name: "UI/UX Design", level: 80 },
-  { name: "SEO", level: 75 },
+  { name: "Front-end", level: 99 },
+  { name: "Sites institucionais", level: 99 },
+  { name: "Landing pages", level: 99 },
+  { name: "Criação de logo", level: 80 },
 ];
 
 export const projectsContent = {
