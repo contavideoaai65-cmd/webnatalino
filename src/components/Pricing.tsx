@@ -17,7 +17,7 @@ const Pricing = () => {
         </div>
 
         {/* Plans Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto items-start">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto items-stretch">
           {plans.map((plan, index) => (
             <article
               key={plan.id}
@@ -50,7 +50,7 @@ const Pricing = () => {
                 </div>
               )}
 
-              <div className="min-h-[280px] flex flex-col items-start">
+              <div className="h-full flex flex-col items-start">
                 {/* Plan Name */}
                 <h3 className="text-lg font-semibold text-foreground mb-2">
                   {plan.name}
