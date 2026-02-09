@@ -25,9 +25,8 @@ export interface AboutContent {
 }
 
 export interface SkillItem {
-  icon: string;
-  title: string;
-  description: string;
+  name: string;
+  level: number;
 }
 
 export interface ProjectItem {
@@ -76,26 +75,11 @@ export const aboutContent: AboutContent = {
 };
 
 export const skillsContent: SkillItem[] = [
-  {
-    icon: "layout",
-    title: "Sites Claros e Objetivos",
-    description: "Criação de sites que comunicam sua mensagem de forma direta, sem complicações desnecessárias.",
-  },
-  {
-    icon: "message-circle",
-    title: "Comunicação Digital",
-    description: "Estruturação de conteúdo que conecta sua empresa aos clientes de maneira eficiente.",
-  },
-  {
-    icon: "smartphone",
-    title: "Responsividade e Usabilidade",
-    description: "Sites que funcionam perfeitamente em qualquer dispositivo, do celular ao computador.",
-  },
-  {
-    icon: "zap",
-    title: "Performance e SEO Básico",
-    description: "Otimização para carregamento rápido e melhor visibilidade nos buscadores.",
-  },
+  { name: "HTML/CSS", level: 95 },
+  { name: "JavaScript", level: 90 },
+  { name: "React", level: 85 },
+  { name: "UI/UX Design", level: 80 },
+  { name: "SEO", level: 75 },
 ];
 
 export const projectsContent = {
