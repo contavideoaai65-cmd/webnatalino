@@ -1,6 +1,10 @@
+import { useState } from "react";
 import { skillsContent } from "@/data/content";
+import { cn } from "@/lib/utils";
 
 const Skills = () => {
+  const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
+
   return (
     <section className="py-24 md:py-32 bg-graphite-light/30">
       <div className="container max-w-4xl">
@@ -11,16 +15,50 @@ const Skills = () => {
           </h2>
         </div>
 
-        {/* Skills as pills - same style as Hero */}
-        <div className="flex flex-wrap justify-center gap-3">
+        {/* Skills Grid with Progress Bars */}
+        <div className="space-y-6">
           {skillsContent.map((skill, index) => (
-            <span
+            <div
               key={skill.name}
-              className="px-4 py-2 text-sm md:text-base font-medium border border-primary/40 text-primary rounded-full bg-primary/10 hover:bg-primary/20 hover:border-primary/60 transition-all duration-300 animate-fade-up"
+              className={cn(
+                "group cursor-pointer transition-all duration-300 animate-fade-up",
+                hoveredSkill && hoveredSkill !== skill.name && "opacity-50"
+              )}
               style={{ animationDelay: `${0.1 + index * 0.1}s` }}
+              onMouseEnter={() => setHoveredSkill(skill.name)}
+              onMouseLeave={() => setHoveredSkill(null)}
             >
-              {skill.name}
-            </span>
+              {/* Skill Name and Level */}
+              <div className="flex justify-between items-center mb-2">
+                <span className={cn(
+                  "text-sm md:text-base font-medium transition-colors duration-300",
+                  hoveredSkill === skill.name ? "text-primary" : "text-foreground"
+                )}>
+                  {skill.name}
+                </span>
+                <span className={cn(
+                  "text-xs md:text-sm font-medium transition-colors duration-300",
+                  hoveredSkill === skill.name ? "text-primary" : "text-muted-foreground"
+                )}>
+                  {skill.level}%
+                </span>
+              </div>
+
+              {/* Progress Bar */}
+              <div className="relative h-2 bg-muted/30 rounded-full overflow-hidden">
+                <div
+                  className={cn(
+                    "absolute inset-y-0 left-0 rounded-full transition-all duration-500 ease-out",
+                    "bg-gradient-to-r from-primary to-primary/70",
+                    hoveredSkill === skill.name && "shadow-[0_0_10px_hsl(var(--primary)/0.5)]"
+                  )}
+                  style={{
+                    width: `${skill.level}%`,
+                    transform: hoveredSkill === skill.name ? "scaleY(1.2)" : "scaleY(1)",
+                  }}
+                />
+              </div>
+            </div>
           ))}
         </div>
       </div>
