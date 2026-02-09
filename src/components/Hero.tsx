@@ -26,6 +26,9 @@ const Hero = () => {
               <span className="text-neon-strong">{firstName}</span>
               <br />
               <span className="text-foreground">{lastName}</span>
+              <br />
+              <span className="text-3xl md:text-4xl lg:text-5xl text-foreground">Web</span>
+              <span className="text-3xl md:text-4xl lg:text-5xl text-primary drop-shadow-[0_0_10px_hsl(var(--primary))]">X</span>
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground mb-4 max-w-xl leading-relaxed">
