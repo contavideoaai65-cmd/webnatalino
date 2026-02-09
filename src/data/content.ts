@@ -85,7 +85,7 @@ export interface ContactContent {
 // Default content (placeholders)
 export const heroContent: HeroContent = {
   firstName: "Natalino",
-  lastName: "Barbosa",
+  lastName: "Barbosa Web X",
   subtitle: "Desenvolvo sites que ajudam pequenas empresas a se comunicarem melhor com seus clientes, transmitindo informações de forma clara e objetiva.",
   specialties: ["Front-end", "Sites institucionais", "Landing pages", "Criação de logotipo"],
   ctaLabel: "Sobre mim",
