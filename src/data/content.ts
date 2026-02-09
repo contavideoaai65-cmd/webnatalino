@@ -46,6 +46,33 @@ export interface ServiceItem {
   description: string;
 }
 
+export interface PlanFeature {
+  text: string;
+  included: boolean;
+}
+
+export interface PlanItem {
+  id: string;
+  name: string;
+  price: string;
+  period?: string;
+  note: string;
+  features: PlanFeature[];
+  ctaText: string;
+  ctaLabel: string;
+  ctaLink: string;
+  recommended?: boolean;
+  ribbon?: string;
+  ribbonAccent?: boolean;
+  accent?: "blue" | "orange";
+}
+
+export interface PricingContent {
+  title: string;
+  subtitle: string;
+  plans: PlanItem[];
+}
+
 export interface ContactContent {
   title: string;
   emailLabel: string;
@@ -146,6 +173,64 @@ export const servicesContent = {
       description: "Atualização e reorganização do seu site atual para melhorar a comunicação com seus clientes.",
     },
   ] as ServiceItem[],
+};
+
+export const pricingContent: PricingContent = {
+  title: "VENDA OU ALUGUEL DE SITES",
+  subtitle: "Escolha o plano ideal para você!",
+  plans: [
+    {
+      id: "essencial",
+      name: "Site Essencial",
+      price: "197",
+      note: "Pagamento Único",
+      features: [
+        { text: "Entrega do Site", included: true },
+        { text: "Sem Hospedagem", included: false },
+        { text: "Sem Suporte", included: false },
+        { text: "Sem Atualizações", included: false },
+      ],
+      ctaText: "Você cuida de tudo sozinho!",
+      ctaLabel: "Escolher",
+      ctaLink: "#contato",
+      accent: "blue",
+    },
+    {
+      id: "profissional",
+      name: "Site Profissional",
+      price: "59",
+      period: "mês",
+      note: "Não se preocupa com hospedagem nem manutenção",
+      features: [
+        { text: "Hospedagem Grátis", included: true },
+        { text: "Suporte e Manutenção", included: true },
+        { text: "Atualizações Limitadas", included: true },
+      ],
+      ctaText: "Bom custo-benefício, sem limitações",
+      ctaLabel: "Assinar",
+      ctaLink: "#contato",
+      recommended: true,
+      ribbon: "Mais Escolhido",
+    },
+    {
+      id: "completo",
+      name: "Site Completo",
+      price: "80",
+      period: "mês",
+      note: "Controle Total",
+      features: [
+        { text: "Entrega do Site", included: true },
+        { text: "Controle Total", included: true },
+        { text: "Atualizações Ilimitadas", included: true },
+      ],
+      ctaText: "Ideal para quem quer liberdade total",
+      ctaLabel: "Assinar",
+      ctaLink: "#contato",
+      ribbon: "Recomendado",
+      ribbonAccent: true,
+      accent: "orange",
+    },
+  ],
 };
 
 export const contactContent: ContactContent = {
