@@ -30,7 +30,9 @@ const Pricing = () => {
                   : plan.recommended
                   ? "md:-translate-y-2 animate-neon-pulse border-primary"
                   : "border-white/[0.03]",
-                !plan.recommended && plan.accent === "blue" && "border-l-4 border-l-blue-500/30"
+                !plan.recommended &&
+                  plan.accent === "blue" &&
+                  "border-l-4 border-l-blue-500/30"
               )}
               style={{ animationDelay: `${0.1 + index * 0.1}s` }}
             >
@@ -42,8 +44,12 @@ const Pricing = () => {
                     plan.ribbonAccent
                       ? "bg-orange-500 text-orange-950"
                       : "bg-primary text-primary-foreground",
-                    plan.recommended && plan.ribbonAccent && "animate-neon-text-pulse-coral",
-                    plan.recommended && !plan.ribbonAccent && "animate-neon-text-pulse"
+                    plan.recommended &&
+                      plan.ribbonAccent &&
+                      "animate-neon-text-pulse-coral",
+                    plan.recommended &&
+                      !plan.ribbonAccent &&
+                      "animate-neon-text-pulse"
                   )}
                 >
                   {plan.ribbon}
@@ -70,8 +76,13 @@ const Pricing = () => {
                 </div>
 
                 {/* Note */}
-                <p className="text-muted-foreground text-sm mb-5">
+                <p className="text-muted-foreground text-sm mb-2">
                   {plan.note}
+                </p>
+
+                {/* Ideal For */}
+                <p className="text-xs text-primary/80 font-medium mb-5 italic">
+                  {plan.idealFor}
                 </p>
 
                 {/* Features */}
@@ -107,7 +118,7 @@ const Pricing = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className={cn(
-                    "inline-flex items-center justify-center px-5 py-2.5 rounded-md font-bold text-sm transition-all duration-200",
+                    "inline-flex items-center justify-center px-5 py-2.5 rounded-md font-bold text-sm transition-all duration-200 w-full text-center",
                     plan.recommended
                       ? "bg-primary text-primary-foreground hover:bg-primary/90"
                       : plan.ribbonAccent

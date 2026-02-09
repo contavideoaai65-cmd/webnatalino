@@ -1,8 +1,8 @@
-import { aboutContent, heroContent } from "@/data/content";
+import { aboutContent } from "@/data/content";
+import { Check } from "lucide-react";
 
 const AboutMe = () => {
-  const { title, text, highlightNumber, highlightLabel, nicheLabel } = aboutContent;
-  const { specialties } = heroContent;
+  const { title, text, highlightNumber, highlightLabel, differentials } = aboutContent;
 
   return (
     <section id="sobre-mim" className="py-24 md:py-32">
@@ -10,26 +10,28 @@ const AboutMe = () => {
         <h2 className="section-title">
           <span className="section-title-accent">|</span> {title.replace("| ", "")}
         </h2>
-        
+
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Text content */}
           <div className="animate-fade-up" style={{ animationDelay: "0.1s" }}>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               {text}
             </p>
-            
-            <div className="flex flex-wrap gap-2">
-              {specialties.map((specialty, index) => (
-                <span
+
+            {/* Differentials */}
+            <ul className="space-y-3">
+              {differentials.map((item, index) => (
+                <li
                   key={index}
-                  className="px-3 py-1 text-sm font-medium border border-primary/40 text-primary rounded-full bg-primary/10"
+                  className="flex items-start gap-3 text-foreground/90"
                 >
-                  {specialty}
-                </span>
+                  <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span className="text-sm md:text-base">{item}</span>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
-          
+
           {/* Highlight box */}
           <div className="animate-fade-up" style={{ animationDelay: "0.2s" }}>
             <div className="card-dark p-8 md:p-10">
@@ -41,17 +43,15 @@ const AboutMe = () => {
                   {highlightLabel}
                 </span>
               </div>
-              
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                {nicheLabel.split("pequenas empresas").map((part, index, array) => (
-                  <span key={index}>
-                    {part}
-                    {index < array.length - 1 && (
-                      <span className="text-neon font-medium">pequenas empresas</span>
-                    )}
-                  </span>
-                ))}
-              </p>
+
+              <a
+                href="https://wa.me/5521981853032?text=Olá! Gostaria de saber mais sobre seus serviços."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-neon mt-6 w-full text-center"
+              >
+                Falar comigo no WhatsApp
+              </a>
             </div>
           </div>
         </div>

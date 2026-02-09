@@ -13,6 +13,8 @@ export interface HeroContent {
   specialties: string[];
   ctaLabel: string;
   ctaAnchor: string;
+  ctaSecondaryLabel: string;
+  ctaSecondaryLink: string;
   avatarImage: string;
 }
 
@@ -22,6 +24,7 @@ export interface AboutContent {
   highlightNumber: string;
   highlightLabel: string;
   nicheLabel: string;
+  differentials: string[];
 }
 
 export interface SkillItem {
@@ -34,6 +37,7 @@ export interface ProjectItem {
   title: string;
   description: string;
   highlight: string;
+  benefit: string;
   coverImage: string;
   galleryImages: string[];
   externalUrl: string;
@@ -57,6 +61,7 @@ export interface PlanItem {
   price: string;
   period?: string;
   note: string;
+  idealFor: string;
   features: PlanFeature[];
   ctaText: string;
   ctaLabel: string;
@@ -75,30 +80,41 @@ export interface PricingContent {
 
 export interface ContactContent {
   title: string;
+  subtitle: string;
   emailLabel: string;
   emailValue: string;
   whatsappLabel: string;
   whatsappNumber: string;
   whatsappDisplay: string;
+  whatsappCtaText: string;
 }
 
 // Default content (placeholders)
 export const heroContent: HeroContent = {
   firstName: "Natalino",
   lastName: "Barbosa",
-  subtitle: "Desenvolvo sites que ajudam pequenas empresas a se comunicarem melhor com seus clientes, transmitindo informações de forma clara e objetiva.",
-  specialties: ["Front-end", "Sites institucionais", "Landing pages", "Criação de logotipo"],
-  ctaLabel: "Sobre mim",
-  ctaAnchor: "#sobre-mim",
+  subtitle: "Crio sites profissionais para pequenas empresas que querem atrair mais clientes pela internet — sem complicação, sem mensalidade surpresa.",
+  specialties: ["Sites institucionais", "Landing pages", "Presença digital", "Criação de logotipo"],
+  ctaLabel: "Solicitar orçamento grátis",
+  ctaAnchor: "https://wa.me/5521981853032?text=Olá! Gostaria de solicitar um orçamento para criação de site.",
+  ctaSecondaryLabel: "Ver projetos",
+  ctaSecondaryLink: "#projetos",
   avatarImage: "/placeholder.svg",
 };
 
 export const aboutContent: AboutContent = {
-  title: "| Sobre mim:",
-  text: "Sou desenvolvedor web focado em criar soluções digitais que realmente funcionam para pequenos negócios. Acredito que um bom site não precisa ser complicado — ele precisa ser claro, organizado e fácil de usar. Meu trabalho é traduzir a essência do seu negócio em uma presença online que seus clientes entendam e confiem.",
+  title: "| Por que me escolher:",
+  text: "Sou desenvolvedor web especializado em criar sites para pequenos negócios há mais de 10 anos. Meu trabalho é simples: transformar a essência do seu negócio em um site que seus clientes entendam, confiem e entrem em contato.",
   highlightNumber: "10+",
-  highlightLabel: "anos de experiência",
-  nicheLabel: "ajudando pequenas empresas a se comunicarem melhor com seus clientes através do site",
+  highlightLabel: "anos criando sites para pequenas empresas",
+  nicheLabel: "ajudando pequenas empresas a conquistarem mais clientes através de um site profissional",
+  differentials: [
+    "Atendimento direto com o desenvolvedor — sem intermediários",
+    "Comunicação simples, sem termos técnicos desnecessários",
+    "Sem mensalidades escondidas ou surpresas no valor",
+    "Sites rápidos, modernos e focados em trazer clientes",
+    "Ideal para pequenos negócios que querem crescer online",
+  ],
 };
 
 export const skillsContent: SkillItem[] = [
@@ -109,47 +125,51 @@ export const skillsContent: SkillItem[] = [
 ];
 
 export const projectsContent = {
-  title: "| Projetos desenvolvidos:",
+  title: "| Projetos que geram resultados:",
   items: [
     {
       id: "1",
-      title: "Site para Clínica",
-      description: "Site institucional completo para clínica de saúde, com agendamento online e informações claras sobre serviços e especialidades.",
+      title: "Site para Clínica de Saúde",
+      description: "Site institucional completo com agendamento online e informações claras sobre serviços e especialidades.",
       highlight: "Informação clara para pacientes",
+      benefit: "Resultado: mais pacientes encontram a clínica e agendam consultas online.",
       coverImage: projectClinic,
       galleryImages: [projectClinic, projectClinic, projectClinic],
       externalUrl: "#",
-      buttonLabel: "Ver projeto",
+      buttonLabel: "Quero um site assim",
     },
     {
       id: "2",
       title: "Landing Page para Prestador de Serviço",
-      description: "Página de apresentação focada em conversão para profissional autônomo, destacando serviços e depoimentos de clientes.",
+      description: "Página focada em conversão para profissional autônomo, com depoimentos e chamada para ação direta.",
       highlight: "Foco em conversão",
+      benefit: "Resultado: o profissional passou a receber contatos diários pelo WhatsApp.",
       coverImage: projectLanding,
       galleryImages: [projectLanding, projectLanding],
       externalUrl: "#",
-      buttonLabel: "Ver projeto",
+      buttonLabel: "Quero um site assim",
     },
     {
       id: "3",
       title: "Site Institucional para Empresa Local",
-      description: "Presença digital completa para empresa local, com seções de serviços, sobre nós e contato integrado.",
+      description: "Presença digital completa com seções de serviços, história da empresa e contato integrado.",
       highlight: "Presença digital profissional",
+      benefit: "Resultado: a empresa passou a ser encontrada no Google e ganhou credibilidade.",
       coverImage: projectInstitutional,
       galleryImages: [projectInstitutional, projectInstitutional, projectInstitutional],
       externalUrl: "#",
-      buttonLabel: "Ver projeto",
+      buttonLabel: "Quero um site assim",
     },
     {
       id: "4",
-      title: "Página de Apresentação Profissional",
-      description: "Portfólio online para profissional liberal, mostrando trabalhos anteriores e facilitando o contato com novos clientes.",
+      title: "Portfólio para Profissional Liberal",
+      description: "Portfólio online mostrando trabalhos anteriores e facilitando o contato com novos clientes.",
       highlight: "Portfólio que converte",
+      benefit: "Resultado: mais visibilidade e novos clientes encontrando o profissional online.",
       coverImage: projectPortfolio,
       galleryImages: [projectPortfolio, projectPortfolio],
       externalUrl: "#",
-      buttonLabel: "Ver projeto",
+      buttonLabel: "Quero um site assim",
     },
   ] as ProjectItem[],
 };
@@ -160,34 +180,35 @@ export const servicesContent = {
     {
       icon: "globe",
       title: "Criação de Sites Institucionais",
-      description: "Sites completos que apresentam sua empresa de forma profissional, com todas as informações que seus clientes precisam.",
+      description: "Sites completos que apresentam sua empresa de forma profissional. Seus clientes encontram tudo que precisam em um só lugar.",
     },
     {
       icon: "target",
-      title: "Landing Pages para Pequenas Empresas",
-      description: "Páginas focadas em conversão, perfeitas para divulgar um serviço específico ou captar novos clientes.",
+      title: "Landing Pages que Convertem",
+      description: "Páginas focadas em gerar contatos e novos clientes. Perfeitas para divulgar serviços e captar leads pelo WhatsApp.",
     },
     {
       icon: "settings",
-      title: "Manutenção e Organização de Conteúdo",
-      description: "Atualização e reorganização do seu site atual para melhorar a comunicação com seus clientes.",
+      title: "Manutenção sem Dor de Cabeça",
+      description: "Cuido de tudo: atualizações, ajustes e melhorias. Você foca no seu negócio enquanto eu cuido do seu site.",
     },
   ] as ServiceItem[],
 };
 
 export const pricingContent: PricingContent = {
   title: "VENDA OU ALUGUEL DE SITES",
-  subtitle: "Escolha o plano ideal para você!",
+  subtitle: "Escolha o plano ideal para o momento do seu negócio!",
   plans: [
     {
       id: "essencial",
       name: "Site Essencial",
       price: "197",
       note: "Pagamento Único",
+      idealFor: "Para quem quer um site simples e cuida da própria hospedagem.",
       features: [
-        { text: "Entrega do Site", included: true },
-        { text: "Sem Hospedagem", included: false },
-        { text: "Sem Suporte", included: false },
+        { text: "Entrega do Site Completo", included: true },
+        { text: "Sem Hospedagem Incluída", included: false },
+        { text: "Sem Suporte Técnico", included: false },
         { text: "Sem Atualizações", included: false },
       ],
       ctaText: "Você cuida de tudo sozinho!",
@@ -199,13 +220,14 @@ export const pricingContent: PricingContent = {
       name: "Site Profissional",
       price: "59",
       period: "mês",
-      note: "Não se preocupa com hospedagem nem manutenção",
+      note: "Sem preocupação com hospedagem nem manutenção",
+      idealFor: "Para quem quer um site profissional sem se preocupar com nada técnico.",
       features: [
-        { text: "Hospedagem Grátis", included: true },
+        { text: "Hospedagem Incluída", included: true },
         { text: "Suporte e Manutenção", included: true },
-        { text: "Atualizações Limitadas", included: true },
+        { text: "Atualizações de Conteúdo", included: true },
       ],
-      ctaText: "Bom custo-benefício, sem limitações",
+      ctaText: "Bom custo-benefício — eu cuido de tudo pra você",
       ctaLabel: "Assinar",
       ctaLink: "https://wa.me/5521981853032?text=Olá! Tenho interesse no plano Site Profissional.",
       accent: "blue",
@@ -215,17 +237,18 @@ export const pricingContent: PricingContent = {
       name: "Site Completo",
       price: "80",
       period: "mês",
-      note: "Controle Total",
+      note: "Tudo incluso — zero dor de cabeça",
+      idealFor: "Para quem quer o melhor: site completo, domínio, hospedagem e suporte prioritário.",
       features: [
-        { text: "Entrega do Site", included: true },
-        { text: "Controle Total", included: true },
+        { text: "Entrega do Site Completo", included: true },
+        { text: "Controle Total do Projeto", included: true },
         { text: "Atualizações Ilimitadas", included: true },
         { text: "Hospedagem Vitalícia", included: true },
         { text: "Suporte Prioritário", included: true },
-        { text: "Domínio Grátis", included: true },
+        { text: "Domínio Grátis (.com.br)", included: true },
       ],
-      ctaText: "Tudo que você precisa!",
-      ctaLabel: "Contratar",
+      ctaText: "Tudo que você precisa, sem surpresas! 🚀",
+      ctaLabel: "Contratar agora",
       ctaLink: "https://wa.me/5521981853032?text=Olá! Tenho interesse no plano Site Completo.",
       ribbon: "Mais Escolhido",
       ribbonAccent: true,
@@ -236,10 +259,12 @@ export const pricingContent: PricingContent = {
 };
 
 export const contactContent: ContactContent = {
-  title: "| Entre em contato comigo:",
+  title: "| Vamos criar o site que seu negócio precisa",
+  subtitle: "Fale direto comigo — sem robôs, sem espera. Respondo rápido pelo WhatsApp.",
   emailLabel: "Email",
   emailValue: "ntlbbarbosa@gmail.com",
   whatsappLabel: "WhatsApp",
   whatsappNumber: "5521981853032",
   whatsappDisplay: "(21) 98185-3032",
+  whatsappCtaText: "Falar direto comigo no WhatsApp →",
 };
