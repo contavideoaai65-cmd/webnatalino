@@ -8,18 +8,18 @@ import Services from "@/components/Services";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import SocialProofNotification from "@/components/SocialProofNotification";
-import { heroContent, aboutContent } from "@/data/content";
+import { heroContent } from "@/data/content";
 
 const Index = () => {
   return (
     <>
       {/* SEO Meta Tags */}
       <title>
-        {heroContent.firstName} {heroContent.lastName} | Desenvolvedor(a) Web para Pequenas Empresas
+        Criação de Sites para Pequenas Empresas | {heroContent.firstName} {heroContent.lastName}
       </title>
       <meta
         name="description"
-        content={`${heroContent.subtitle.slice(0, 155)}...`}
+        content="Crio sites profissionais para pequenas empresas que querem atrair mais clientes pela internet. Orçamento grátis pelo WhatsApp."
       />
 
       <Header />
