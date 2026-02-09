@@ -118,8 +118,8 @@ const generateNotification = (index: number): Notification => {
   };
 };
 
-const INITIAL_DELAY = 120000; // 120 segundos = 2 minutos
-const NOTIFICATION_DELAY = 240000; // 240 segundos = 4 minutos
+const INITIAL_DELAY = 30000; // 30 segundos
+const NOTIFICATION_DELAY = 120000; // 120 segundos = 2 minutos (2 a cada 4 min)
 const TOTAL_NOTIFICATIONS = 35;
 const PAUSE_DURATION = 2700000; // 45 minutos
 const DISPLAY_DURATION = 8000; // 8 segundos visível
