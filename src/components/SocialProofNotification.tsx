@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { X, ShoppingBag } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useNotificationSound } from "@/hooks/useNotificationSound";
 
 // Nomes brasileiros fictícios
 const clientNames = [
@@ -111,6 +112,7 @@ const SocialProofNotification = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [notificationCount, setNotificationCount] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const { playNotificationSound } = useNotificationSound();
 
   const showNotification = useCallback(() => {
     if (isPaused) return;
@@ -118,6 +120,9 @@ const SocialProofNotification = () => {
     const notification = generateNotification(notificationCount);
     setCurrentNotification(notification);
     setIsVisible(true);
+    
+    // Tocar o som "plu plu plu"
+    playNotificationSound();
 
     // Esconder após DISPLAY_DURATION
     setTimeout(() => {
@@ -138,7 +143,7 @@ const SocialProofNotification = () => {
       
       return newCount;
     });
-  }, [notificationCount, isPaused]);
+  }, [notificationCount, isPaused, playNotificationSound]);
 
   useEffect(() => {
     // Primeira notificação após 10 segundos
