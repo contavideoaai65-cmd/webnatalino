@@ -17,19 +17,22 @@ const clientNames = [
   "Pedro", "Ricardo", "Sérgio", "Tiago", "Vinícius", "Wesley", "Arthur", "Breno"
 ];
 
-// Formas de pagamento
-const paymentMethods = [
+// Formas de pagamento por plano
+const paymentMethodsEssencial = [
+  "3x sem juros",
+];
+
+const paymentMethodsProfissionalCompleto = [
   "PIX",
   "Cartão de Crédito",
-  "Cartão de Débito",
-  "Boleto Bancário",
-  "PIX parcelado",
-  "2x no cartão",
-  "3x no cartão",
-  "4x no cartão",
-  "6x no cartão",
-  "12x no cartão"
 ];
+
+const getPaymentMethodByPlan = (plan: PlanType): string => {
+  if (plan === "essencial") {
+    return getRandomItem(paymentMethodsEssencial);
+  }
+  return getRandomItem(paymentMethodsProfissionalCompleto);
+};
 
 // Cidades brasileiras
 const cities = [
@@ -96,7 +99,7 @@ const generateNotification = (index: number): Notification => {
     name: getRandomItem(clientNames),
     plan,
     planName: planConfig[plan].name,
-    paymentMethod: getRandomItem(paymentMethods),
+    paymentMethod: getPaymentMethodByPlan(plan),
     city: getRandomItem(cities),
     timeAgo: getRandomTimeAgo(),
   };
