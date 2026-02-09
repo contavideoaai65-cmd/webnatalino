@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import AboutMe from "@/components/AboutMe";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
+import Pricing from "@/components/Pricing";
 import Services from "@/components/Services";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -31,6 +32,9 @@ const Index = () => {
         </div>
         <div id="projetos">
           <Projects />
+        </div>
+        <div id="planos">
+          <Pricing />
         </div>
         <div id="servicos">
           <Services />
