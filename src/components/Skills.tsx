@@ -37,8 +37,10 @@ const Skills = () => {
                   {skill.name}
                 </span>
                 <span className={cn(
-                  "text-xs md:text-sm font-medium transition-colors duration-300",
-                  hoveredSkill === skill.name ? "text-primary" : "text-muted-foreground"
+                  "text-xs md:text-sm font-medium transition-all duration-300",
+                  hoveredSkill === skill.name 
+                    ? "text-primary opacity-100" 
+                    : "text-muted-foreground opacity-0"
                 )}>
                   {skill.level}%
                 </span>
