@@ -209,7 +209,6 @@ export const pricingContent: PricingContent = {
       ctaText: "Bom custo-benefício, sem limitações",
       ctaLabel: "Assinar",
       ctaLink: "https://wa.me/5521981853032?text=Olá! Tenho interesse no plano Site Profissional.",
-      recommended: true,
       ribbon: "Mais Escolhido",
     },
     {
@@ -231,6 +230,7 @@ export const pricingContent: PricingContent = {
       ctaLink: "https://wa.me/5521981853032?text=Olá! Tenho interesse no plano Site Completo.",
       ribbon: "Recomendado",
       ribbonAccent: true,
+      recommended: true,
       accent: "orange",
     },
   ],
