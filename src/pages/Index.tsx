@@ -7,6 +7,7 @@ import Pricing from "@/components/Pricing";
 import Services from "@/components/Services";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import SocialProofNotification from "@/components/SocialProofNotification";
 import { heroContent, aboutContent } from "@/data/content";
 
 const Index = () => {
@@ -42,6 +43,7 @@ const Index = () => {
         <Contact />
         <Footer />
       </main>
+      <SocialProofNotification />
     </>
   );
 };
