@@ -3,7 +3,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { heroContent } from "@/data/content";
-import logoN3WebX from "@/assets/logo-n3webx-transparent.png";
+import logoN3WebX from "@/assets/logo-n3webx-clean.png";
 
 const navItems = [
   { label: "Início", href: "#inicio" },
