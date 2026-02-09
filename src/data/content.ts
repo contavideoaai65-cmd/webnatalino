@@ -61,7 +61,7 @@ export const heroContent: HeroContent = {
   firstName: "Natalino",
   lastName: "Barbosa",
   subtitle: "Desenvolvo sites que ajudam pequenas empresas a se comunicarem melhor com seus clientes, transmitindo informações de forma clara e objetiva.",
-  specialties: ["Front-end", "Sites institucionais", "Landing pages"],
+  specialties: ["Front-end", "Sites institucionais", "Landing pages", "Criação de logotipo"],
   ctaLabel: "Sobre mim",
   ctaAnchor: "#sobre-mim",
   avatarImage: "/placeholder.svg",
