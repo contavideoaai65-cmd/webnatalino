@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { heroContent } from "@/data/content";
-import logoN3WebX from "@/assets/logo-n3webx-original.png";
 
 const navItems = [
   { label: "Início", href: "#inicio" },
@@ -52,13 +50,11 @@ const Header = () => {
               e.preventDefault();
               handleNavClick("#inicio");
             }}
-            className="hover:opacity-80 transition-opacity"
+            className="hover:opacity-80 transition-opacity font-display text-xl md:text-2xl font-bold tracking-tight"
           >
-            <img 
-              src={logoN3WebX} 
-              alt="N3 WebX - Criando sites que conectam marcas e pessoas" 
-              className="h-8 md:h-10 w-auto"
-            />
+            <span className="text-primary drop-shadow-[0_0_10px_hsl(var(--primary))]">N3</span>
+            <span className="text-foreground">Web</span>
+            <span className="text-primary">X</span>
           </a>
 
           {/* Desktop Navigation */}
