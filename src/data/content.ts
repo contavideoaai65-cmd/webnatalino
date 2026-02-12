@@ -8,6 +8,7 @@ import projectPortfolio from "@/assets/project-portfolio.jpg";
 import mockupDesktop from "@/assets/mockup-desktop.jpg";
 import mockupMobile from "@/assets/mockup-mobile.jpg";
 import mockupPowerchess from "@/assets/mockup-powerchess.png";
+import mockupMaquiagem from "@/assets/mockup-maquiagem.png";
 
 export interface HeroContent {
   firstName: string;
@@ -149,6 +150,17 @@ export const projectsContent = {
       benefit: "Resultado: página com visual marcante que transmite autoridade e gera inscrições para o programa de R$2.497.",
       coverImage: mockupPowerchess,
       galleryImages: [mockupPowerchess],
+      externalUrl: "#",
+      buttonLabel: "Quero um site assim",
+    },
+    {
+      id: "6",
+      title: "Landing Page — Curso de Maquiagem Profissional",
+      description: "Landing page de alto impacto para curso de maquiagem profissional, com design roxo vibrante, seções de módulos, prova social e CTA direto para inscrição. Layout premium com vídeo de apresentação.",
+      highlight: "Design vibrante e envolvente",
+      benefit: "Resultado: página com visual marcante que gera inscrições e transmite profissionalismo no nicho de beleza.",
+      coverImage: mockupMaquiagem,
+      galleryImages: [mockupMaquiagem],
       externalUrl: "#",
       buttonLabel: "Quero um site assim",
     },
