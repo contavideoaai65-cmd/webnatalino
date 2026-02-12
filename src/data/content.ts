@@ -5,6 +5,8 @@ import projectClinic from "@/assets/project-clinic.jpg";
 import projectLanding from "@/assets/project-landing.jpg";
 import projectInstitutional from "@/assets/project-institutional.jpg";
 import projectPortfolio from "@/assets/project-portfolio.jpg";
+import mockupDesktop from "@/assets/mockup-desktop.jpg";
+import mockupMobile from "@/assets/mockup-mobile.jpg";
 
 export interface HeroContent {
   firstName: string;
@@ -133,8 +135,8 @@ export const projectsContent = {
       description: "Site institucional completo com agendamento online e informações claras sobre serviços e especialidades.",
       highlight: "Informação clara para pacientes",
       benefit: "Resultado: mais pacientes encontram a clínica e agendam consultas online.",
-      coverImage: projectClinic,
-      galleryImages: [projectClinic, projectClinic, projectClinic],
+      coverImage: mockupDesktop,
+      galleryImages: [mockupDesktop, mockupMobile, projectClinic],
       externalUrl: "#",
       buttonLabel: "Quero um site assim",
     },
@@ -144,8 +146,8 @@ export const projectsContent = {
       description: "Página focada em conversão para profissional autônomo, com depoimentos e chamada para ação direta.",
       highlight: "Foco em conversão",
       benefit: "Resultado: o profissional passou a receber contatos diários pelo WhatsApp.",
-      coverImage: projectLanding,
-      galleryImages: [projectLanding, projectLanding],
+      coverImage: mockupMobile,
+      galleryImages: [mockupMobile, mockupDesktop, projectLanding],
       externalUrl: "#",
       buttonLabel: "Quero um site assim",
     },
@@ -155,8 +157,8 @@ export const projectsContent = {
       description: "Presença digital completa com seções de serviços, história da empresa e contato integrado.",
       highlight: "Presença digital profissional",
       benefit: "Resultado: a empresa passou a ser encontrada no Google e ganhou credibilidade.",
-      coverImage: projectInstitutional,
-      galleryImages: [projectInstitutional, projectInstitutional, projectInstitutional],
+      coverImage: mockupDesktop,
+      galleryImages: [mockupDesktop, mockupMobile, projectInstitutional],
       externalUrl: "#",
       buttonLabel: "Quero um site assim",
     },
@@ -166,8 +168,8 @@ export const projectsContent = {
       description: "Portfólio online mostrando trabalhos anteriores e facilitando o contato com novos clientes.",
       highlight: "Portfólio que converte",
       benefit: "Resultado: mais visibilidade e novos clientes encontrando o profissional online.",
-      coverImage: projectPortfolio,
-      galleryImages: [projectPortfolio, projectPortfolio],
+      coverImage: mockupMobile,
+      galleryImages: [mockupMobile, mockupDesktop, projectPortfolio],
       externalUrl: "#",
       buttonLabel: "Quero um site assim",
     },
