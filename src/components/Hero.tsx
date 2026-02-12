@@ -1,7 +1,6 @@
 import { heroContent } from "@/data/content";
 import { ArrowDown, MessageCircle } from "lucide-react";
 import avatarNatalino from "@/assets/avatar-natalino.jpeg";
-import OptimizedImage from "./OptimizedImage";
 
 const Hero = () => {
   const {
@@ -76,12 +75,11 @@ const Hero = () => {
             <div className="relative">
               <div className="absolute inset-0 rounded-full bg-primary/20 blur-3xl scale-110" />
               <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-primary/30 shadow-[0_0_40px_hsl(var(--neon-green)/0.3)]">
-                <OptimizedImage
+                <img
                   src={avatarImage}
                   alt={`${firstName} ${lastName} — Desenvolvedor Web para Pequenas Empresas`}
                   className="w-full h-full object-cover shadow-none"
                   loading="eager"
-                  sizes="(max-width: 768px) 256px, 320px"
                   width={320}
                   height={320}
                 />
