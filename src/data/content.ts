@@ -11,6 +11,7 @@ import mockupPowerchess from "@/assets/mockup-powerchess.png";
 import mockupMaquiagem from "@/assets/mockup-maquiagem.png";
 import mockupHighticket from "@/assets/mockup-highticket.png";
 import mockupTalitaperosa from "@/assets/mockup-talitaperosa.png";
+import mockupEmbudoox from "@/assets/mockup-embudoox.png";
 
 export interface HeroContent {
   firstName: string;
@@ -174,6 +175,17 @@ export const projectsContent = {
       benefit: "Resultado: página estratégica que atrai pacientes de alto ticket e gera inscrições qualificadas para o evento.",
       coverImage: mockupHighticket,
       galleryImages: [mockupHighticket],
+      externalUrl: "#",
+      buttonLabel: "Quero um site assim",
+    },
+    {
+      id: "8",
+      title: "Landing Page — EmbudooX: Captação Automática de Clientes",
+      description: "Landing page dark e moderna para plataforma de automação de captação de leads. Design impactante com vídeo de apresentação, prova social com notificações de 'New Lead' e CTA de alta conversão.",
+      highlight: "Automação e geração de leads",
+      benefit: "Resultado: página que transmite autoridade e converte visitantes em leads qualificados de forma automática.",
+      coverImage: mockupEmbudoox,
+      galleryImages: [mockupEmbudoox],
       externalUrl: "#",
       buttonLabel: "Quero um site assim",
     },
