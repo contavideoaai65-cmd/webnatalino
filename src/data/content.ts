@@ -131,12 +131,12 @@ export const projectsContent = {
   items: [
     {
       id: "1",
-      title: "Site para Clínica de Saúde",
-      description: "Site institucional completo com agendamento online e informações claras sobre serviços e especialidades.",
-      highlight: "Informação clara para pacientes",
-      benefit: "Resultado: mais pacientes encontram a clínica e agendam consultas online.",
+      title: "Landing Page — Programa de Emagrecimento",
+      description: "Landing page de alta conversão para nutricionista, com seções de benefícios, prova social, depoimentos e CTA direto para compra do programa.",
+      highlight: "Foco total em conversão e vendas",
+      benefit: "Resultado: aumento significativo nas vendas do programa de emagrecimento online.",
       coverImage: mockupDesktop,
-      galleryImages: [mockupDesktop, mockupMobile, projectClinic],
+      galleryImages: [mockupDesktop, mockupMobile],
       externalUrl: "#",
       buttonLabel: "Quero um site assim",
     },
