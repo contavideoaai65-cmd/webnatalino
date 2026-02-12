@@ -19,17 +19,17 @@ const ProjectCard = ({ project, onOpenGallery }: ProjectCardProps) => {
         role="button"
         tabIndex={0}
         onKeyDown={(e) => e.key === "Enter" && onOpenGallery(project)}
-        aria-label={`Ver galeria de fotos de ${title}`}
-      >
+        aria-label={`Ver galeria de fotos de ${title}`}>
+
         <img
           src={coverImage}
           alt={`Projeto: ${title} — ${highlight}`}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           loading="lazy"
           width={550}
-          height={350}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          height={350} />
+
+        
       </div>
 
       {/* Content */}
@@ -56,14 +56,14 @@ const ProjectCard = ({ project, onOpenGallery }: ProjectCardProps) => {
           href={`https://wa.me/5521981853032?text=Olá! Vi o projeto "${title}" e quero um site parecido.`}
           target="_blank"
           rel="noopener noreferrer"
-          className="btn-neon text-sm w-full text-center"
-        >
+          className="btn-neon text-sm w-full text-center">
+
           <MessageCircle className="mr-2 h-4 w-4" />
           {buttonLabel}
         </a>
       </div>
-    </article>
-  );
+    </article>);
+
 };
 
 export default ProjectCard;
