@@ -9,6 +9,7 @@ import mockupDesktop from "@/assets/mockup-desktop.jpg";
 import mockupMobile from "@/assets/mockup-mobile.jpg";
 import mockupPowerchess from "@/assets/mockup-powerchess.png";
 import mockupMaquiagem from "@/assets/mockup-maquiagem.png";
+import mockupHighticket from "@/assets/mockup-highticket.png";
 
 export interface HeroContent {
   firstName: string;
@@ -161,6 +162,17 @@ export const projectsContent = {
       benefit: "Resultado: página com visual marcante que gera inscrições e transmite profissionalismo no nicho de beleza.",
       coverImage: mockupMaquiagem,
       galleryImages: [mockupMaquiagem],
+      externalUrl: "#",
+      buttonLabel: "Quero um site assim",
+    },
+    {
+      id: "7",
+      title: "Landing Page — Planejamento High Ticket para Clínicas",
+      description: "Landing page de captação de leads para evento online voltado a profissionais de saúde. Design dark e premium com formulário de inscrição, prova social e CTA de alta conversão.",
+      highlight: "Captação de leads de alto valor",
+      benefit: "Resultado: página estratégica que atrai pacientes de alto ticket e gera inscrições qualificadas para o evento.",
+      coverImage: mockupHighticket,
+      galleryImages: [mockupHighticket],
       externalUrl: "#",
       buttonLabel: "Quero um site assim",
     },
