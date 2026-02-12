@@ -7,6 +7,7 @@ import projectInstitutional from "@/assets/project-institutional.jpg";
 import projectPortfolio from "@/assets/project-portfolio.jpg";
 import mockupDesktop from "@/assets/mockup-desktop.jpg";
 import mockupMobile from "@/assets/mockup-mobile.jpg";
+import mockupPowerchess from "@/assets/mockup-powerchess.png";
 
 export interface HeroContent {
   firstName: string;
@@ -137,6 +138,17 @@ export const projectsContent = {
       benefit: "Resultado: aumento significativo nas vendas do programa de emagrecimento online.",
       coverImage: mockupDesktop,
       galleryImages: [mockupDesktop, mockupMobile],
+      externalUrl: "#",
+      buttonLabel: "Quero um site assim",
+    },
+    {
+      id: "5",
+      title: "Landing Page — PowerChess: Liderança Feminina",
+      description: "Landing page premium para curso de liderança feminina com temática de xadrez. Design dark e sofisticado com seções de benefícios, prova social, pricing e CTA direto para inscrição.",
+      highlight: "Design premium de alto impacto",
+      benefit: "Resultado: página com visual marcante que transmite autoridade e gera inscrições para o programa de R$2.497.",
+      coverImage: mockupPowerchess,
+      galleryImages: [mockupPowerchess],
       externalUrl: "#",
       buttonLabel: "Quero um site assim",
     },
