@@ -45,41 +45,36 @@ const SocialProofNotification = () => {
   const [isVisible, setIsVisible] = useState(false);
   const indexRef = useRef(0);
   const countRef = useRef(0);
-  const [isPaused, setIsPaused] = useState(false);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const { playNotificationSound } = useNotificationSound();
 
-  const showNext = useCallback(() => {
-    if (isPaused) return;
+  const scheduleNext = useCallback((delay: number) => {
+    if (timerRef.current) clearTimeout(timerRef.current);
+    timerRef.current = setTimeout(() => {
+      const notification = notifications[indexRef.current % notifications.length];
+      indexRef.current += 1;
+      setCurrent(notification);
+      setIsVisible(true);
+      playNotificationSound();
 
-    const notification = notifications[indexRef.current % notifications.length];
-    indexRef.current += 1;
-    setCurrent(notification);
-    setIsVisible(true);
-    playNotificationSound();
+      setTimeout(() => setIsVisible(false), DISPLAY_DURATION);
 
-    setTimeout(() => setIsVisible(false), DISPLAY_DURATION);
-
-    countRef.current += 1;
-    if (countRef.current >= PAUSE_AFTER) {
-      setIsPaused(true);
-      setTimeout(() => {
-        setIsPaused(false);
+      countRef.current += 1;
+      if (countRef.current >= PAUSE_AFTER) {
         countRef.current = 0;
-      }, PAUSE_DURATION);
-    }
-  }, [isPaused, playNotificationSound]);
+        scheduleNext(PAUSE_DURATION);
+      } else {
+        scheduleNext(NOTIFICATION_INTERVAL);
+      }
+    }, delay);
+  }, [playNotificationSound]);
 
   useEffect(() => {
-    const timeout = setTimeout(showNext, INITIAL_DELAY);
-    return () => clearTimeout(timeout);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  useEffect(() => {
-    if (isPaused || countRef.current === 0) return;
-    const interval = setInterval(showNext, NOTIFICATION_INTERVAL);
-    return () => clearInterval(interval);
-  }, [showNext, isPaused]);
+    scheduleNext(INITIAL_DELAY);
+    return () => {
+      if (timerRef.current) clearTimeout(timerRef.current);
+    };
+  }, [scheduleNext]);
 
   if (!current || !isVisible) return null;
 
