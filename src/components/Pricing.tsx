@@ -6,11 +6,11 @@ const Pricing = () => {
   const { title, subtitle, plans } = pricingContent;
 
   return (
-    <section className="py-24 md:py-32 bg-card/30">
+    <section className="py-24 md:py-32 bg-card/30" aria-labelledby="pricing-heading">
       <div className="container">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-up">
-          <h2 className="text-xl md:text-2xl font-bold text-foreground tracking-wide mb-2">
+          <h2 id="pricing-heading" className="text-xl md:text-2xl font-bold text-foreground tracking-wide mb-2">
             {title}
           </h2>
           <p className="text-muted-foreground">{subtitle}</p>
