@@ -36,7 +36,7 @@ const notifications: SocialNotification[] = [
 
 const INITIAL_DELAY = 3000;
 const NOTIFICATION_INTERVAL = 5000;
-const DISPLAY_DURATION = 8000;
+const DISPLAY_DURATION = 5000;
 const PAUSE_AFTER = 20;
 const PAUSE_DURATION = 2700000;
 
