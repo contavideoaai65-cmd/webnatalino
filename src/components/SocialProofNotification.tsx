@@ -34,8 +34,8 @@ const notifications: SocialNotification[] = [
   { id: 20, nome: "Isabela", acao: "solicitou um orçamento para Landing Page", local: "João Pessoa", tempo: "há 5 dia(s)" },
 ];
 
-const INITIAL_DELAY = 6000;
-const NOTIFICATION_INTERVAL = 5000;
+const INITIAL_DELAY = 8000;
+const NOTIFICATION_INTERVAL = 10000;
 const DISPLAY_DURATION = 5000;
 const PAUSE_AFTER = 20;
 const PAUSE_DURATION = 2700000;
