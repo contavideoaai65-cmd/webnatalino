@@ -10,6 +10,7 @@ import mockupMobile from "@/assets/mockup-mobile.jpg";
 import mockupPowerchess from "@/assets/mockup-powerchess.png";
 import mockupMaquiagem from "@/assets/mockup-maquiagem.png";
 import mockupHighticket from "@/assets/mockup-highticket.png";
+import mockupTalitaperosa from "@/assets/mockup-talitaperosa.png";
 
 export interface HeroContent {
   firstName: string;
@@ -134,12 +135,12 @@ export const projectsContent = {
   items: [
     {
       id: "1",
-      title: "Landing Page — Programa de Emagrecimento",
-      description: "Landing page de alta conversão para nutricionista, com seções de benefícios, prova social, depoimentos e CTA direto para compra do programa.",
+      title: "Landing Page — Programa de Emagrecimento (Talita Perosa)",
+      description: "Landing page de alta conversão para nutricionista, com design clean e elegante, seções de benefícios, prova social, depoimentos e CTA direto para compra do programa.",
       highlight: "Foco total em conversão e vendas",
       benefit: "Resultado: aumento significativo nas vendas do programa de emagrecimento online.",
-      coverImage: mockupDesktop,
-      galleryImages: [mockupDesktop, mockupMobile],
+      coverImage: mockupTalitaperosa,
+      galleryImages: [mockupTalitaperosa],
       externalUrl: "#",
       buttonLabel: "Quero um site assim",
     },
