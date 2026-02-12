@@ -9,6 +9,7 @@ import mockupDesktop from "@/assets/mockup-desktop.jpg";
 import mockupMobile from "@/assets/mockup-mobile.jpg";
 import mockupPowerchess from "@/assets/mockup-powerchess.png";
 import mockupMaquiagem from "@/assets/mockup-maquiagem.png";
+import mockupCopywriting from "@/assets/mockup-copywriting.png";
 
 export interface HeroContent {
   firstName: string;
@@ -161,6 +162,17 @@ export const projectsContent = {
       benefit: "Resultado: página com visual marcante que gera inscrições e transmite profissionalismo no nicho de beleza.",
       coverImage: mockupMaquiagem,
       galleryImages: [mockupMaquiagem],
+      externalUrl: "#",
+      buttonLabel: "Quero um site assim",
+    },
+    {
+      id: "7",
+      title: "Landing Page — Curso de Copywriting",
+      description: "Landing page premium para curso de copywriting e persuasão, com design dark sofisticado, seções de módulos, prova social e CTA direto para inscrição. Layout envolvente com foco em conversão.",
+      highlight: "Copy persuasiva de alto impacto",
+      benefit: "Resultado: página com visual premium que transmite autoridade e gera inscrições para o curso de copywriting.",
+      coverImage: mockupCopywriting,
+      galleryImages: [mockupCopywriting],
       externalUrl: "#",
       buttonLabel: "Quero um site assim",
     },
