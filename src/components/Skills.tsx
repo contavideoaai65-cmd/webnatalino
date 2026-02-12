@@ -1,64 +1,68 @@
-import { useState } from "react";
-import { skillsContent } from "@/data/content";
 import { cn } from "@/lib/utils";
 
-const Skills = () => {
-  const [hoveredSkill, setHoveredSkill] = useState<string | null>(null);
+interface SkillGroup {
+  category: string;
+  level: string;
+  items: string[];
+}
 
+const skillGroups: SkillGroup[] = [
+  {
+    category: "Expert",
+    level: "Domínio avançado",
+    items: ["React", "TypeScript", "Tailwind CSS", "HTML5 / CSS3", "JavaScript", "Vite", "Sites Institucionais", "Landing Pages"],
+  },
+  {
+    category: "Proficiente",
+    level: "Uso frequente",
+    items: ["Figma", "Git / GitHub", "SEO Técnico", "Responsividade", "Acessibilidade Web", "Criação de Logotipos"],
+  },
+];
+
+const Skills = () => {
   return (
-    <section className="py-24 md:py-32 bg-graphite-light/30">
+    <section id="habilidades" className="py-24 md:py-32 bg-graphite-light/30" aria-labelledby="skills-heading">
       <div className="container max-w-4xl">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-display font-bold text-foreground">
-            <span className="text-primary">|</span> Habilidades
+          <h2 id="skills-heading" className="text-2xl md:text-3xl font-display font-bold text-foreground">
+            <span className="text-primary">|</span> Habilidades & Tecnologias
           </h2>
         </div>
 
-        {/* Skills Grid with Progress Bars */}
-        <div className="space-y-6">
-          {skillsContent.map((skill, index) => (
+        {/* Skill Groups */}
+        <div className="space-y-10">
+          {skillGroups.map((group, groupIndex) => (
             <div
-              key={skill.name}
-              className={cn(
-                "group cursor-pointer transition-all duration-300 animate-fade-up",
-                hoveredSkill && hoveredSkill !== skill.name && "opacity-50"
-              )}
-              style={{ animationDelay: `${0.1 + index * 0.1}s` }}
-              onMouseEnter={() => setHoveredSkill(skill.name)}
-              onMouseLeave={() => setHoveredSkill(null)}
+              key={group.category}
+              className="animate-fade-up"
+              style={{ animationDelay: `${0.1 + groupIndex * 0.15}s` }}
             >
-              {/* Skill Name and Level */}
-              <div className="flex justify-between items-center mb-2">
-                <span className={cn(
-                  "text-sm md:text-base font-medium transition-colors duration-300",
-                  hoveredSkill === skill.name ? "text-primary" : "text-foreground"
-                )}>
-                  {skill.name}
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-lg font-display font-semibold text-primary">
+                  {group.category}
                 </span>
-                <span className={cn(
-                  "text-xs md:text-sm font-medium transition-all duration-300",
-                  hoveredSkill === skill.name 
-                    ? "text-primary opacity-100" 
-                    : "text-muted-foreground opacity-0"
-                )}>
-                  {skill.level}%
+                <span className="text-xs text-muted-foreground uppercase tracking-wider">
+                  — {group.level}
                 </span>
               </div>
 
-              {/* Progress Bar */}
-              <div className="relative h-2 bg-muted/30 rounded-full overflow-hidden">
-                <div
-                  className={cn(
-                    "absolute inset-y-0 left-0 rounded-full transition-all duration-500 ease-out",
-                    "bg-gradient-to-r from-primary to-primary/70",
-                    hoveredSkill === skill.name && "shadow-[0_0_10px_hsl(var(--primary)/0.5)]"
-                  )}
-                  style={{
-                    width: `${skill.level}%`,
-                    transform: hoveredSkill === skill.name ? "scaleY(1.2)" : "scaleY(1)",
-                  }}
-                />
+              <div className="flex flex-wrap gap-2">
+                {group.items.map((item) => (
+                  <span
+                    key={item}
+                    className={cn(
+                      "px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200",
+                      "border bg-muted/20 text-foreground/90",
+                      "hover:border-primary hover:text-primary hover:bg-primary/10",
+                      groupIndex === 0
+                        ? "border-primary/30"
+                        : "border-border"
+                    )}
+                  >
+                    {item}
+                  </span>
+                ))}
               </div>
             </div>
           ))}

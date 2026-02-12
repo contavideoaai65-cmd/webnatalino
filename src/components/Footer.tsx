@@ -15,7 +15,7 @@ const Footer = () => {
             Todos os direitos reservados.
           </p>
           
-          <nav className="flex gap-6">
+          <nav className="flex gap-6" aria-label="Links do rodapé">
             <a
               href="#sobre-mim"
               className="text-sm text-muted-foreground hover:text-primary transition-colors focus-ring rounded-lg px-2 py-1"
