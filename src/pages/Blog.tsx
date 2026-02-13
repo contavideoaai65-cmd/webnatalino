@@ -2,6 +2,7 @@ import { useBlogPosts } from "@/hooks/useBlogPosts";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Calendar, User, Tag, ArrowRight } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const Blog = () => {
   const { posts, loading, error } = useBlogPosts();
@@ -28,6 +29,10 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen bg-background pt-32 pb-16">
+      <SEO 
+        title="Blog de Marketing Digital" 
+        description="Dicas, estratégias e insights sobre como crescer sua empresa na internet com sites profissionais e landing pages."
+      />
       <div className="container">
         {/* Header */}
         <motion.div

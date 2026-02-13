@@ -3,6 +3,7 @@ import { useBlogPost, useBlogPosts } from "@/hooks/useBlogPosts";
 import { motion } from "framer-motion";
 import ReactMarkdown from "react-markdown";
 import { Calendar, User, ArrowLeft, Share2 } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -41,6 +42,11 @@ const BlogPost = () => {
 
   return (
     <div className="min-h-screen bg-background pt-32 pb-16">
+      <SEO 
+        title={post.title} 
+        description={post.description}
+        ogType="article"
+      />
       <div className="container max-w-3xl">
         {/* Back Button */}
         <motion.button
