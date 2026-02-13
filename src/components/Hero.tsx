@@ -43,24 +43,24 @@ const Hero = () => {
               {subtitle}
             </p>
 
-            <div className="flex flex-wrap gap-2 mb-8">
+            <ul className="flex flex-wrap gap-2 mb-8">
               {specialties.map((specialty, index) => (
-                <span
+                <li
                   key={index}
                   className="px-3 py-1 text-sm font-medium border border-primary/40 text-primary rounded-full bg-primary/10"
                 >
                   {specialty}
-                </span>
+                </li>
               ))}
-            </div>
+            </ul>
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-3">
-              <a href={ctaAnchor} target="_blank" rel="noopener noreferrer" className="btn-neon group text-center">
+              <a href={ctaAnchor} target="_blank" rel="noopener noreferrer" className="btn-neon group text-center" aria-label="Solicitar orçamento grátis via WhatsApp">
                 <MessageCircle className="mr-2 h-5 w-5" />
                 {ctaLabel}
               </a>
-              <a href={ctaSecondaryLink} className="btn-outline-neon group text-center">
+              <a href={ctaSecondaryLink} className="btn-outline-neon group text-center" aria-label="Ver projetos do portfólio">
                 {ctaSecondaryLabel}
                 <ArrowDown className="ml-2 h-4 w-4 transition-transform group-hover:translate-y-1" />
               </a>

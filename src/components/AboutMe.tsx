@@ -49,6 +49,7 @@ const AboutMe = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-neon mt-6 w-full text-center"
+                aria-label="Falar com Natalino Barbosa no WhatsApp"
               >
                 Falar comigo no WhatsApp
               </a>

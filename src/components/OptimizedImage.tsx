@@ -29,8 +29,8 @@ const OptimizedImage = ({
 
   return (
     <picture>
-      <source srcSet={avifSrc} type="image/avif" />
-      <source srcSet={webpSrc} type="image/webp" />
+      <source srcSet={`${basePath}-small.avif 600w, ${avifSrc} 1200w`} type="image/avif" sizes={sizes} />
+      <source srcSet={`${basePath}-small.webp 600w, ${webpSrc} 1200w`} type="image/webp" sizes={sizes} />
       <img
         src={src}
         alt={alt}
