@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Send } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -17,6 +18,7 @@ interface FormErrors {
 }
 
 const ContactForm = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
@@ -72,7 +74,10 @@ const ContactForm = () => {
     setIsSubmitted(true);
     setFormData({ name: "", email: "", subject: "", message: "" });
 
-    setTimeout(() => setIsSubmitted(false), 5000);
+    // Redirect to thank you page after 2 seconds
+    setTimeout(() => {
+      navigate("/obrigado");
+    }, 2000);
   };
 
   const handleChange = (
@@ -109,7 +114,7 @@ const ContactForm = () => {
           role="alert"
           className="p-3 rounded-lg bg-primary/10 border border-primary/30 text-primary text-sm"
         >
-          Mensagem preparada! Verifique seu app de e-mail para enviar.
+          ✓ Mensagem enviada com sucesso! Você será redirecionado em breve...
         </div>
       )}
 
