@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
     <title>Criação de Sites para Pequenas Empresas | Natalino Barbosa — N3WebX</title>
     <meta name="description" content="Crio sites profissionais para pequenas empresas que querem atrair mais clientes pela internet. Landing pages, sites institucionais e presença digital. Fale no WhatsApp." />
     <meta name="author" content="Natalino Barbosa" />
@@ -20,17 +22,64 @@
     <meta name="twitter:title" content="Criação de Sites para Pequenas Empresas | N3WebX" />
     <meta name="twitter:description" content="Sites profissionais que atraem clientes para o seu negócio." />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#39ff14" />
     
-    <!-- Preload critical fonts -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" as="style" />
-    
-    <!-- Preconnect to Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Preload critical local fonts -->
+    <link rel="preload" href="/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/SpaceGrotesk-Bold.woff2" as="font" type="font/woff2" crossorigin />
+
+    <!-- SEO Schema JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "N3WebX - Natalino Barbosa",
+      "image": "https://webnatalino.lovable.app/assets/logo-n3webx.png",
+      "@id": "https://webnatalino.lovable.app",
+      "url": "https://webnatalino.lovable.app",
+      "telephone": "+5521981853032",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Rio de Janeiro",
+        "addressRegion": "RJ",
+        "addressCountry": "BR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -22.9068,
+        "longitude": -43.1729
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+        "https://wa.me/5521981853032"
+      ],
+      "description": "Desenvolvimento de sites profissionais, landing pages e presença digital para pequenas empresas."
+    }
+    </script>
   </head>
 
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx" defer></script>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js');
+        });
+      }
+    </script>
   </body>
 </html>
