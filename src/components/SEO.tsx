@@ -12,12 +12,12 @@ const SEO = ({
   title, 
   description, 
   canonical = "https://webnatalino.lovable.app", 
-  ogImage = "https://webnatalino.lovable.app/assets/logo-n3webx.png",
+  ogImage = "https://webnatalino.lovable.app/assets/logo-nbwebx.png",
   ogType = "website"
 }: SEOProps) => {
   useEffect(() => {
     // Update basic meta tags
-    document.title = `${title} | N3WebX`;
+    document.title = `${title} | NBWEBX`;
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {

@@ -29,7 +29,7 @@ export const useBlogPosts = () => {
         const postFiles = [
           "001-por-que-pequenas-empresas-precisam-de-site.md",
           "002-landing-pages-que-convertem.md",
-          "003-vantagens-site-n3webx.md",
+          "003-vantagens-site-nbwebx.md",
         ];
 
         const loadedPosts: BlogPost[] = [];
@@ -83,7 +83,7 @@ export const useBlogPost = (slug: string) => {
         const postFiles = [
           "001-por-que-pequenas-empresas-precisam-de-site.md",
           "002-landing-pages-que-convertem.md",
-          "003-vantagens-site-n3webx.md",
+          "003-vantagens-site-nbwebx.md",
         ];
 
         for (const file of postFiles) {

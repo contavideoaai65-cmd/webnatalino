@@ -57,8 +57,8 @@ const Header = () => {
             }}
             className="hover:opacity-80 transition-opacity font-display text-xl md:text-2xl font-bold tracking-tight"
           >
-            <span className="text-primary drop-shadow-[0_0_10px_hsl(var(--primary))]">N3</span>
-            <span className="text-foreground">Web</span>
+            <span className="text-primary drop-shadow-[0_0_10px_hsl(var(--primary))]">NB</span>
+            <span className="text-foreground">WEB</span>
             <span className="text-primary">X</span>
           </a>
 

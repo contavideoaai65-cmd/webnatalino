@@ -5,7 +5,7 @@ const ASSETS_TO_CACHE = [
   '/manifest.json',
   '/fonts/Inter-Regular.woff2',
   '/fonts/SpaceGrotesk-Bold.woff2',
-  '/assets/logo-n3webx.png'
+  '/assets/logo-nbwebx.png'
 ];
 
 self.addEventListener('install', (event) => {
