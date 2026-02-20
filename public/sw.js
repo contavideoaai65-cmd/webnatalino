@@ -1,25 +1,26 @@
-const CACHE_NAME = 'webnatalino-v1';
-const ASSETS_TO_CACHE = [
-  '/',
-  '/index.html',
-  '/manifest.json',
-  '/fonts/Inter-Regular.woff2',
-  '/fonts/SpaceGrotesk-Bold.woff2',
-  '/assets/logo-nbwebx.png'
-];
+/* SiteOps / NBWEBX Service Worker
+   - NÃO cacheia status.json
+   - NÃO trava modo manutenção
+   - Atualiza imediatamente
+*/
 
-self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(ASSETS_TO_CACHE);
-    })
-  );
+self.addEventListener("install", event => {
+  self.skipWaiting();
 });
 
-self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    caches.match(event.request).then((response) => {
-      return response || fetch(event.request);
-    })
-  );
+self.addEventListener("activate", event => {
+  event.waitUntil(self.clients.claim());
+});
+
+// Regra de ouro: nunca interferir no status.json
+self.addEventListener("fetch", event => {
+  const url = new URL(event.request.url);
+
+  if (url.pathname.endsWith("/status.json")) {
+    return;
+  }
+
+  if (url.pathname.endsWith("/maintenance.html")) {
+    return;
+  }
 });
