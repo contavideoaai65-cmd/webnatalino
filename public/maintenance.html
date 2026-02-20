@@ -3,7 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Em manutenção</title>
+  <title>Manutenção programada</title>
+
+  <!-- 🔁 Retorno automático quando sair da manutenção -->
+  <script>
+    async function checkStatus() {
+      try {
+        const res = await fetch("/status.json", {
+          cache: "no-store",
+          headers: {
+            "Cache-Control": "no-cache",
+            "Pragma": "no-cache"
+          }
+        });
+
+        if (!res.ok) return;
+
+        const data = await res.json();
+        if (data.status !== "maintenance") {
+          window.location.replace("/");
+        }
+      } catch (e) {}
+    }
+
+    // checa ao abrir
+    checkStatus();
+
+    // checa a cada 5 segundos
+    setInterval(checkStatus, 5000);
+  </script>
+
   <style>
     body {
       margin: 0;
