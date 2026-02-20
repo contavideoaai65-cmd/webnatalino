@@ -1,7 +1,7 @@
 {
-  "status": "online",
-  "updated_at": "2026-02-20T02:22:30.929563Z",
-  "message": "",
-  "title": "",
+  "status": "maintenance",
+  "updated_at": "2026-02-20T02:22:35.498717Z",
+  "message": "Site em manutenção. Voltaremos em breve.",
+  "title": "Manutenção Programada",
   "version": "1.0"
 }
