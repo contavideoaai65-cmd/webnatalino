@@ -22,7 +22,19 @@
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
 
     <!-- 🔒 SiteOps Status Check (não bloqueia o site) -->
-    <script src="/status-check.js" defer></script>
+    <script>
+(async () => {
+  try {
+    const res = await fetch("/status.json?t=" + Date.now(), { cache: "no-store" });
+    if (!res.ok) return;
+
+    const data = await res.json();
+    if (data.status === "maintenance") {
+      window.location.replace("/maintenance.html");
+    }
+  } catch (e) {}
+})();
+</script>
 
     <title>Criação de Sites para Pequenas Empresas | Natalino Barbosa — NBWEBX</title>
 
