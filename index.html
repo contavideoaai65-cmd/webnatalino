@@ -1,6 +1,21 @@
 <!doctype html>
 <html lang="pt-BR">
   <head>
+    <script>
+    (async () => {
+      try {
+        const res = await fetch("/status.json?t=" + Date.now(), { cache: "no-store" });
+        if (!res.ok) return;
+
+        const data = await res.json();
+        if (data.status === "maintenance") {
+          window.location.replace("/maintenance.html");
+        }
+      } catch (e) {
+        // nunca bloqueia o site
+      }
+    })();
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
