@@ -1,121 +1,120 @@
 <!doctype html>
 <html lang="pt-BR">
   <head>
-    <script>
-    (async () => {
-      try {
-        const res = await fetch("/status.json?t=" + Date.now(), { cache: "no-store" });
-        if (!res.ok) return;
-
-        const data = await res.json();
-        if (data.status === "maintenance") {
-          window.location.replace("/maintenance.html");
-        }
-      } catch (e) {
-        // nunca bloqueia o site
-      }
-    })();
-    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-Content-Type-Options" content="nosniff" />
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
 
-    <!-- 🔒 SiteOps Status Check (não bloqueia o site) -->
+    <!-- 🔒 SiteOps – manutenção (executa ANTES do Vite/React) -->
     <script>
-(async () => {
-  try {
-    const res = await fetch("/status.json?t=" + Date.now(), { cache: "no-store" });
-    if (!res.ok) return;
+      (async () => {
+        try {
+          const res = await fetch("/status.json", {
+            cache: "no-store",
+            headers: {
+              "Cache-Control": "no-cache",
+              "Pragma": "no-cache"
+            }
+          });
 
-    const data = await res.json();
-    if (data.status === "maintenance") {
-      window.location.replace("/maintenance.html");
-    }
-  } catch (e) {}
-})();
-</script>
+          if (!res.ok) return;
+
+          const data = await res.json();
+          if (data.status === "maintenance") {
+            window.location.replace("/maintenance.html");
+          }
+        } catch (e) {
+          // nunca bloqueia o site
+        }
+      })();
+    </script>
 
     <title>Criação de Sites para Pequenas Empresas | Natalino Barbosa — NBWEBX</title>
 
-    <meta name="description" content="Crio sites profissionais para pequenas empresas que querem atrair mais clientes pela internet. Landing pages, sites institucionais e presença digital. Fale no WhatsApp." />
+    <meta
+      name="description"
+      content="Crio sites profissionais para pequenas empresas que querem atrair mais clientes pela internet. Landing pages, sites institucionais e presença digital. Fale no WhatsApp."
+    />
     <meta name="author" content="Natalino Barbosa" />
-    <meta name="keywords" content="criação de sites, sites para pequenas empresas, landing pages, presença digital profissional, criação de site institucional, desenvolvedor web" />
+    <meta
+      name="keywords"
+      content="criação de sites, sites para pequenas empresas, landing pages, presença digital profissional, criação de site institucional, desenvolvedor web"
+    />
 
-    <link rel="canonical" href="https://webnatalino.lovable.app" />
+    <link rel="canonical" href="https://webnatalino.vercel.app" />
 
+    <!-- Open Graph -->
     <meta property="og:title" content="Criação de Sites para Pequenas Empresas | NBWEBX" />
-    <meta property="og:description" content="Sites profissionais que atraem clientes para o seu negócio. Orçamento grátis pelo WhatsApp." />
+    <meta
+      property="og:description"
+      content="Sites profissionais que atraem clientes para o seu negócio. Orçamento grátis pelo WhatsApp."
+    />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://webnatalino.lovable.app" />
+    <meta property="og:url" content="https://webnatalino.vercel.app" />
     <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
     <meta property="og:locale" content="pt_BR" />
 
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Criação de Sites para Pequenas Empresas | NBWEBX" />
-    <meta name="twitter:description" content="Sites profissionais que atraem clientes para o seu negócio." />
+    <meta
+      name="twitter:description"
+      content="Sites profissionais que atraem clientes para o seu negócio."
+    />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
     <link rel="manifest" href="/manifest.json" />
     <meta name="theme-color" content="#39ff14" />
 
-    <!-- Preload fonts -->
-    <link rel="preload" href="/fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="preload" href="/fonts/SpaceGrotesk-Bold.woff2" as="font" type="font/woff2" crossorigin />
+    <!-- Fonts -->
+    <link
+      rel="preload"
+      href="/fonts/Inter-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/SpaceGrotesk-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
 
-    <!-- SEO Schema JSON-LD -->
+    <!-- SEO Schema -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "NBWEBX - Natalino Barbosa",
-      "image": "https://webnatalino.lovable.app/assets/logo-nbwebx.png",
-      "@id": "https://webnatalino.lovable.app",
-      "url": "https://webnatalino.lovable.app",
-      "telephone": "+5521981853032",
-      "priceRange": "$$",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Rio de Janeiro",
-        "addressRegion": "RJ",
-        "addressCountry": "BR"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": -22.9068,
-        "longitude": -43.1729
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
-        "opens": "09:00",
-        "closes": "18:00"
-      },
-      "sameAs": [
-        "https://wa.me/5521981853032"
-      ],
-      "description": "Desenvolvimento de sites profissionais, landing pages e presença digital para pequenas empresas."
-    }
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "NBWEBX - Natalino Barbosa",
+        "url": "https://webnatalino.vercel.app",
+        "telephone": "+5521981853032",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Rio de Janeiro",
+          "addressRegion": "RJ",
+          "addressCountry": "BR"
+        },
+        "sameAs": ["https://wa.me/5521981853032"],
+        "description": "Desenvolvimento de sites profissionais, landing pages e presença digital para pequenas empresas."
+      }
     </script>
   </head>
 
   <body>
     <div id="root"></div>
 
-    <!-- React/Vite -->
-    <script type="module" src="/src/main.tsx" defer></script>
+    <!-- Vite / React -->
+    <script type="module" src="/src/main.tsx"></script>
 
     <!-- Service Worker -->
     <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/sw.js');
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/sw.js");
         });
       }
     </script>
